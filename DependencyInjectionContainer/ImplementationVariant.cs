@@ -1,6 +1,6 @@
 ﻿namespace DependencyInjectionContainer
 {
-    public enum ImplementationName
+    public enum ImplementationVariant
     {
         None,
         First,

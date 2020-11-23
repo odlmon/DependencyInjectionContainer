@@ -12,11 +12,11 @@ namespace DependencyInjectionContainer
             Dependencies = new Dictionary<Type, List<ImplementationInfo>>();
         }
 
-        public void Register<TDependency, TImplementation>(Lifetime lifetime = Lifetime.Transient, ImplementationName name = ImplementationName.None) 
+        public void Register<TDependency, TImplementation>(Lifetime lifetime = Lifetime.Transient, ImplementationVariant variant = ImplementationVariant.None) 
             where TDependency: class 
             where TImplementation: TDependency
         {
-            var implementationInfo = new ImplementationInfo(typeof(TImplementation), lifetime, name);
+            var implementationInfo = new ImplementationInfo(typeof(TImplementation), lifetime, variant);
 
             if (Dependencies.ContainsKey(typeof(TDependency)))
             {
@@ -31,7 +31,7 @@ namespace DependencyInjectionContainer
 
         public void Register(Type dependencyType, Type implementationType)
         {
-            var implementationInfo = new ImplementationInfo(implementationType, Lifetime.Transient, ImplementationName.None);
+            var implementationInfo = new ImplementationInfo(implementationType, Lifetime.Transient, ImplementationVariant.None);
 
             if (Dependencies.ContainsKey(dependencyType))
             {

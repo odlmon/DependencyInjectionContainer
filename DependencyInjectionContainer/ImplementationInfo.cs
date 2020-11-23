@@ -6,13 +6,13 @@ namespace DependencyInjectionContainer
     {
         public Lifetime Lifetime { get; }
         public Type ImplementationType { get; }
-        public ImplementationName Name { get; }
+        public ImplementationVariant Variant { get; }
         
-        public ImplementationInfo(Type type, Lifetime lifetime, ImplementationName name)
+        public ImplementationInfo(Type type, Lifetime lifetime, ImplementationVariant variant)
         {
             Lifetime = lifetime;
             ImplementationType = type;
-            Name = name;
+            Variant = variant;
         }
     }
 }
